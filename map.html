@@ -473,9 +473,23 @@ var country_names = Array.prototype.map.call( ids, function( el, i ) {
 country_names = country_names.slice(3,183);
 
 for (var i = 0; i < country_data.length; i++){
-  if (country_names.includes(country_data[i]["country"])){
-    console.log(country_data[i]["country"]);
-  }
+  country_numbers[i] = {
+    country_name : country_data[i]["country"],
+    total_cases : country_data[i]["cases"]["total"],
+    new_cases : country_data[i]["cases"]["new"],
+    new_deaths : country_data[i]["deaths"]["new"],
+    total_deaths : country_data[i]["deaths"]["total"]
+};
+}
+
+country_numbers = country_numbers.slice(0,180);
+console.log(country_numbers);
+
+for (var i = 0; i < country_numbers.length; i++){
+  country_cases = country_numbers[i]["total_cases"];
+  country_deaths = country_numbers[i]["total_deaths"];
+
+
 }
 
 
@@ -494,10 +508,10 @@ for (var i = 0; i < country_data.length; i++){
 
 
 
+
 getJSON()
 
-
-
+console.log(country_numbers);
 
 
 ]]></script>
