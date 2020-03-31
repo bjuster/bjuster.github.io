@@ -501,7 +501,7 @@
     <path id="Ukraine" class = "country_path" onmouseover="displayName('Ukraine',Ukraine_total_cases,Ukraine_total_deaths,Ukraine_new_cases,Ukraine_new_deaths
 ); showTooltip()" onmouseout = "hideTooltip()" d="M460.662,388.791l-2.507,1.409l0.622,2.663l-2.316,4.884l0.02,2.151l1.089,0.691l6.983,0.346l1.954-1.615l2.092,0.699l2.999,4.002l-2.194,3.942l2.61,0.761l3.414-3.933l1.954,0.354l1.815,1.262l-1.601,2.109l2.161,3.371h2.299l1.185-2.248l2.438-0.494l0.069-1.823l-4.529-0.7l0.14-1.963h4.391l4.737-3.794l2.092-1.824l0.345-5.757l-9.336-0.838l-3.829-5.402l-2.646-0.908l-3.207,0.139l-1.443,3.569l-6.57,0.087l-2.135-0.986L460.662,388.791L460.662,388.791z"/>
     <path id="Uganda" class = "country_path" onmouseover="displayName('Uganda'); showTooltip()" onmouseout = "hideTooltip()" d="M480.311,532.23l2.619,2.454l1.643-1.045l4.442-0.728l0.762,0.079l0.284-1.688l2.508-5.272l-2.109-4.392l-6.837,0.044l-0.043,1.808l0.917,0.882l-0.139,1.807L480.311,532.23L480.311,532.23z"/>
-    <g id="USA" class = "country_path" style = "fill:black;" onmouseover="displayName('USA',USA_total_cases,USA_total_deaths,USA_new_cases,USA_new_deaths
+    <g id="USA" class = "country_path" onmouseover="displayName('USA',USA_total_cases,USA_total_deaths,USA_new_cases,USA_new_deaths
 ); showTooltip()" onmouseout = "hideTooltip()">
         <path class="mainland" d="M143.589,375.989l-0.865,3.475l-3.017-1.954h-1.504l-0.865,3.691l-10.554,23.65l2.801,20.606l3.449,1.737l0.648,5.645h7.105l6.889,5.204l13.562,1.305l1.504,6.941l2.152,1.521l3.017-3.033l2.369,1.08l2.152,9.976l3.656,2.386l3.017-5.645l9.258-6.726l6.025,2.817l5.169,0.433l0.216-3.25l10.762,0.217l2.152,2.386l0.432,5.42l-1.288,3.034l1.504,5.203h3.233l3.232-4.987l-1.288-2.386l-1.288-5.204l1.936-5.86l8.826-7.59l6.673-1.953l-0.864-6.293l9.258-9.983l9.258-1.521l-1.504-5.193l9.042-5.205v-6.94l-0.865-0.433l-3.233,1.082l-0.432,4.252l-10.745,0.129l-8.419,5.594l-13.217,4.322l-2.109-2.586l5.999-9.076l-2.965-2.826l-2.014-3.838l-4.175-3.354l-4.538-0.38l-8.575-5.852L143.589,375.989L143.589,375.989z"/>
         <path d="M74.791,285.234l2.991,5.594l1.919-0.432v-1.938L74.791,285.234L74.791,285.234z"/>
@@ -1243,12 +1243,12 @@ async function getJSON() {
 var data = await response.json()
 var country_data = data["response"];
 
-console.log(country_data)
+// console.log(country_data)
 
 time = country_data[0]["time"].slice(0,19).replace("T", " ");
 world_total_cases = country_data[189]["cases"]["total"]
 world_total_deaths = country_data[189]["deaths"]["total"]
-console.log(world_total_cases)
+//console.log(world_total_cases)
 
 document.getElementById('time').innerHTML = "<i>Last updated at</i>: " + time + "      Total Cases: " + world_total_cases + " Total Deaths: " + world_total_deaths;
 
@@ -1271,19 +1271,19 @@ for (var i = 0; i < country_data.length; i++){
 }
 
 for(var i = 0; i < country_numbers.length; i++){
-  console.log(country_numbers[i]["country_name"], country_numbers[i]["total_cases"]);
+  //console.log(country_numbers[i]["country_name"], country_numbers[i]["total_cases"]);
   country_total_cases[i] = {"name" : country_numbers[i]["country_name"],
                             "total cases" : country_numbers[i]["total_cases"]};
 
 }
-console.log(country_total_cases);
+//console.log(country_total_cases);
 
 
 
-console.log(country_totals);
+//console.log(country_totals);
 
 country_numbers = country_numbers.slice(0,179);
-console.log(country_numbers);
+//console.log(country_numbers);
 
 country_numbers = country_numbers.sort((a,b) => (a.country_name > b.country_name) ? 1: -1);
 path_classes = document.querySelectorAll('.country_path');
