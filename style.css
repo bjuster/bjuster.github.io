@@ -1,0 +1,80 @@
+* {
+  font-family: Arial;
+}
+#world-map {
+  display: block;
+  margin: auto;
+  background-color: #3281a8;
+  border-radius: 8px;
+
+}
+path:hover {
+  stroke: white;
+  stroke-width: 2;
+}
+
+.country_path {
+  fill: #f5faf5;
+}
+
+#none {
+  fill: #f5faf5;
+
+}
+#zero {
+  fill: #c8f7c6;
+}
+
+#thousand{
+  fill: #81f27c;
+}
+
+#five_thousand {
+  fill: #3ac234;
+}
+
+#ten_thousand {
+  fill: #2b9926;
+}
+
+
+#fifty_thousand {
+  fill: #175413;
+}
+
+#hundred_thousand {
+  fill: #021a02;
+}
+
+
+
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 13px;
+}
+
+.label {
+  fill: white;
+}
+
+#tooltip, text {
+  opacity: 0;
+}
+
+#time {
+  font-size: 16px;
+}
+
+#color-chart {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  bottom: 345px;
+  left: 10px;
+
+}
